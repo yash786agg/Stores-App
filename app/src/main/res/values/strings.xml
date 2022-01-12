@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Stores-App</string>
+    <string name="no_data_to_show">No data to show</string>
+    <string name="error_network_connection">Network error. Please check your Internet connection</string>
+
+    <!-- Security Permission Strings. -->
+
+    <string name="permission_denied">Permission Denied</string>
+    <string name="i_am_sure">I AM SURE</string>
+    <string name="re_try">RE-TRY</string>
+    <string name="access_fine_loc">Without this permission, you won\'t be able to get your Location. Are you sure you want to Deny this permission.?</string>
+    <string name="open_settings">Open Settings</string>
+    <string name="permission_required_dialog_title">Permission Required</string>
+    <string name="permission_denied_dialog_info">Without accepting Location permission you can\'t proceed further</string>
+
+    <string name="need_location">Enable GPS SERVICE</string>
+    <string name="location_content">App needs your location in order to find nearby stores.</string>
+    <string name="turn_on">Turn On</string>
+
+</resources>

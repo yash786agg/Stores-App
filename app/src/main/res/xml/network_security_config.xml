@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config>
+        <domain includeSubdomains="true">rest.paysafecard.com</domain>
+        <pin-set expiration="2022-09-23">
+            <pin digest="SHA-256">4RqkrIrErrVo/xOhdRj/PH+oayfIHW0q+GDLMu1KtEg=</pin>
+            <!-- backup pin -->
+            <pin digest="SHA-256">OAt/zfrM/X/ZDXhpHPU6i/ZZd0fZAQKVqpZSmRdg7V4=</pin>
+            <!-- backup pin -->
+            <pin digest="SHA-256">yMKGNy9ETFo1MzQT5X95eJfzTcthHykS+MbEdkLLZyg=</pin>
+            <!-- backup pin -->
+            <pin digest="SHA-256">XbvMTGE+o0q2THhvRYZcx4ewplxh/VuVsYBcljBiiqE=</pin>
+            <!-- backup pin -->
+            <pin digest="SHA-256">kGf17cbOkRz2/gJG7neCH/EmAsq740gtqzx5Rmgn9wI=</pin>
+            <!-- backup pin -->
+            <pin digest="SHA-256">l48xflikR+ED5yb5fNCQP1o+p4c15U7YDTuj35pj39I=</pin>
+            <!-- backup pin -->
+            <pin digest="SHA-256">0enbD8qdYHHaavFafUYuyzoEzyAWODJyUDXpXpKYVBk=</pin>
+        </pin-set>
+    </domain-config>
+</network-security-config>

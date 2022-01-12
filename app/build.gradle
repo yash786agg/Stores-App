@@ -1,0 +1,132 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+    id 'dagger.hilt.android.plugin'
+}
+
+def keysPropertiesFile = rootProject.file("keys.properties")
+def keysProperties = new Properties()
+keysProperties.load(new FileInputStream(keysPropertiesFile))
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.android.stores_app"
+        minSdk 24
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", 'BASE_URL', keysProperties['BASE_URL']
+        }
+        release {
+            buildConfigField "String", 'BASE_URL', keysProperties['BASE_URL']
+
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //Android app bundle settings for density,abi and Language.
+    bundle {
+        density {
+            // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit true
+        }
+        abi {
+            // Different APKs are generated for devices with different CPU architectures; true by default.
+            enableSplit true
+        }
+        language {
+            enableSplit false
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
+        //View Binding.
+        viewBinding true
+        //Data binding
+        dataBinding = true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    // Assertions
+    def assertions_version = "1.1.3"
+    androidTestImplementation "androidx.test.ext:junit:$assertions_version"
+
+    // Espresso dependencies
+    def espresso_version = "3.4.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    // AndroidX appcompat dependency
+    def appcompat_version = "1.4.0"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    // AndroidX material design
+    def material_version = "1.4.0"
+    implementation "com.google.android.material:material:$material_version"
+
+    // AndroidX constraint layout dependency
+    def constraint_layout_version = "2.1.2"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    //Retrofit dependency Injection
+    def retrofitVersion = "2.9.0"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+
+    // Activity Scope dependency Injection
+    def activityScopeVersion = "1.4.0"
+    implementation "androidx.activity:activity-ktx:$activityScopeVersion"
+
+    // Activity Scope dependency Injection
+    def pagingVersion = "3.1.0"
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+
+    // Dagger2-Hilt dependency Injection
+    def daggerHiltVersion = "2.38.1"
+    implementation "com.google.dagger:hilt-android:$daggerHiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$daggerHiltVersion"
+
+    // Google Location Android dependency
+    def google_location_version = "19.0.1"
+    implementation "com.google.android.gms:play-services-location:$google_location_version"
+
+    // Junit dependency Injection
+    def junit_version = "4.13.2"
+    testImplementation "junit:junit:$junit_version"
+
+    // MOCKITO dependency Injection
+    def mockito_version = "2.0.0"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version"
+
+    // AndroidX Test Core library
+    def androidX_test_core_version = "2.1.0"
+    testImplementation "androidx.arch.core:core-testing:$androidX_test_core_version"
+}
