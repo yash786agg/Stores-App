@@ -32,6 +32,7 @@ Go to the [Demo APK](https://github.com/yash786agg/Stores-App/tree/master/demo_a
 - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/index.html) - An MVVM architecture.
 - [Paging3.0](https://developer.android.com/topic/libraries/architecture/paging/v3-overview) - A Paging Library helps you load and display small chunks of data at a time.   
 - [Mockito](http://site.mockito.org/) - Unit Testing.
+- [Dark Mode](https://developer.android.com/guide/topics/ui/look-and-feel/darktheme) - Application supports both Light and Dark Mode/Theme.
 
 
 Above Features are used to make code simple, generic, understandable, clean and easily maintainable
